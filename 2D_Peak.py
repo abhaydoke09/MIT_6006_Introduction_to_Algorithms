@@ -155,8 +155,16 @@ plot = [
 	[ 2,  3,  4,  5,  6,  5,  4,  3,  2,  1,  0]
 ]
 
-terrain = TwoDPeak(plot)
-terrain.findPeak()
+# terrain = TwoDPeak(plot)
+# terrain.findPeak()
+
+def IamStupid(plot):
+	plot = np.array(plot)
+	first_col = list(plot[:,0])
+	max_row = first_col.index(max(first_col))
+	print "peak ==> ", max(list(plot[max_row,:]))
+
+IamStupid(plot)
 
 
 
