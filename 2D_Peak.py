@@ -21,31 +21,38 @@ class TwoDPeak(object):
 		return options[direction]
 
 	def sliceTheTerrain(self, middle_row, middle_col, direction):
-		options = { 1: self.terrain[:, :middle_col-1],
-					2: self.terrain[:middle_row-1, :middle_col-1],
-					3: self.terrain[:middle_row-1, :],
-					4: self.terrain[:middle_row-1, middle_col+1:],
-					5: self.terrain[:, middle_col+1:],
-					6: self.terrain[middle_row+1:, middle_col+1:],
-					7: self.terrain[middle_row+1:, :],
-					8: self.terrain[middle_row+1:, :middle_col-1],
+		options = { 1: self.terrain[:, :middle_col+1],
+					2: self.terrain[:middle_row+1, :middle_col+1],
+					3: self.terrain[:middle_row+1, :],
+					4: self.terrain[:middle_row+1, middle_col:],
+					5: self.terrain[:, middle_col:],
+					6: self.terrain[middle_row:, middle_col:],
+					7: self.terrain[middle_row:, :],
+					8: self.terrain[middle_row:, :middle_col+1],
 				}
 		self.terrain = options[direction]
 		return
 
 	def displayTerrain(self):
+		middle_row = (self.terrain.shape[0])/2
+		middle_col = (self.terrain.shape[1])/2
+		print "middle", self.terrain[middle_row, middle_col]
+		print "##########"
 		for i in range(self.terrain.shape[0]):
 			for j in range(self.terrain.shape[1]):
-				print self.terrain[i,j]," "
+
+				print '{:3}'.format(self.terrain[i,j]), " ",
 			print ""
 		print "##########"
-		
+
 	def findPeak(self):
 		if self.getTerrainSize<=4:
 			return 
-		self.displayTerrain()
 		middle_row = (self.terrain.shape[0])/2
 		middle_col = (self.terrain.shape[1])/2
+		
+		'''Use this line if you want to display the terrain'''
+		self.displayTerrain()		
 
 		if self.getTerrainSize()<=4:
 			print "peak ==> ", max(self.terrain)
@@ -56,6 +63,7 @@ class TwoDPeak(object):
 			max_val = max(neighbors.values())
 			if self.terrain[middle_row,middle_col]>max_val:
 				print "peak ==> ", self.terrain[middle_row, middle_col]
+				return
 			self.sliceTheTerrain(middle_row, middle_col, max(neighbors, key=lambda key: neighbors[key]))
 			self.findPeak()
 
@@ -65,6 +73,7 @@ class TwoDPeak(object):
 			max_val = max(neighbors.values())
 			if self.terrain[middle_row,middle_col]>max_val:
 				print "peak ==> ", self.terrain[middle_row, middle_col]
+				return
 			self.sliceTheTerrain(middle_row, middle_col, max(neighbors, key=lambda key: neighbors[key]))
 			self.findPeak()
 
@@ -73,6 +82,7 @@ class TwoDPeak(object):
 			max_val = max(neighbors.values())
 			if self.terrain[middle_row,middle_col]>max_val:
 				print "peak ==> ", self.terrain[middle_row, middle_col]
+				return
 			self.sliceTheTerrain(middle_row, middle_col, max(neighbors, key=lambda key: neighbors[key]))
 			self.findPeak()
 
@@ -81,6 +91,7 @@ class TwoDPeak(object):
 			max_val = max(neighbors.values())
 			if self.terrain[middle_row,middle_col]>max_val:
 				print "peak ==> ", self.terrain[middle_row, middle_col]
+				return
 			self.sliceTheTerrain(middle_row, middle_col, max(neighbors, key=lambda key: neighbors[key]))
 			self.findPeak()
 
@@ -89,6 +100,7 @@ class TwoDPeak(object):
 			max_val = max(neighbors.values())
 			if self.terrain[middle_row,middle_col]>max_val:
 				print "peak ==> ", self.terrain[middle_row, middle_col]
+				return
 			self.sliceTheTerrain(middle_row, middle_col, max(neighbors, key=lambda key: neighbors[key]))
 			self.findPeak()
 
@@ -97,6 +109,7 @@ class TwoDPeak(object):
 			max_val = max(neighbors.values())
 			if self.terrain[middle_row,middle_col]>max_val:
 				print "peak ==> ", self.terrain[middle_row, middle_col]
+				return
 			self.sliceTheTerrain(middle_row, middle_col, max(neighbors, key=lambda key: neighbors[key]))
 			self.findPeak()
 
@@ -105,6 +118,7 @@ class TwoDPeak(object):
 			max_val = max(neighbors.values())
 			if self.terrain[middle_row,middle_col]>max_val:
 				print "peak ==> ", self.terrain[middle_row, middle_col]
+				return
 			self.sliceTheTerrain(middle_row, middle_col, max(neighbors, key=lambda key: neighbors[key]))
 			self.findPeak()
 
@@ -113,6 +127,7 @@ class TwoDPeak(object):
 			max_val = max(neighbors.values())
 			if self.terrain[middle_row,middle_col]>max_val:
 				print "peak ==> ", self.terrain[middle_row, middle_col]
+				return
 			self.sliceTheTerrain(middle_row, middle_col, max(neighbors, key=lambda key: neighbors[key]))
 			self.findPeak()
 
@@ -121,6 +136,7 @@ class TwoDPeak(object):
 			max_val = max(neighbors.values())
 			if self.terrain[middle_row,middle_col]>max_val:
 				print "peak ==> ", self.terrain[middle_row, middle_col]
+				return
 			self.sliceTheTerrain(middle_row, middle_col, max(neighbors, key=lambda key: neighbors[key]))
 			self.findPeak()
 
