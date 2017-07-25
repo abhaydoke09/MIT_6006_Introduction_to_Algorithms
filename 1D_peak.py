@@ -10,7 +10,15 @@ class OneDPeak(object):
 			print self.terrain[i],' ',
 		print ''
 
+	def displayTerrain(self, left, right):
+		print 'Search area ==> ',
+		for i in xrange(left, right+1):
+			print self.terrain[i],' ',
+		print ''
+
 	def find_peak(self, start, end):
+		self.displayTerrain(start, end)
+
 		middle = (start+end)/2
 		if self.terrain[middle-1]<=self.terrain[middle] and self.terrain[middle+1]<=self.terrain[middle]:
 			print self.terrain[middle]
@@ -29,5 +37,5 @@ class OneDPeak(object):
 
 
 terrain = OneDPeak(s)
-terrain.displayTerrain()
+#terrain.displayTerrain()
 terrain.find_peak(0,len(s)-1)
