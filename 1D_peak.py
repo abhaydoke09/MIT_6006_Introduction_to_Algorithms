@@ -1,5 +1,10 @@
 s = [1,2,3,4,4,5,6,3,2,1,3]
 
+
+class OneDPeak(object):
+	def __init__(self, terrain):
+		self.terrain = terrain
+		
 def find_peak(a, start, end):
 	middle = (start+end)/2
 	if a[middle-1]<=a[middle] and a[middle+1]<=a[middle]:
