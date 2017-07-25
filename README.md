@@ -9,5 +9,8 @@
      - Specifies the allowed operations by the algorithms
      - Specifies cost of the operation
      - Cost of algorithm = sum of each operation cost
+   
+   - Random Access Machine
+   - Pointer Machine
      
    
