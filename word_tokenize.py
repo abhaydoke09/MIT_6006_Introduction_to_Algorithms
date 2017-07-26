@@ -2,6 +2,7 @@ import re
 from bs4 import BeautifulSoup
 import requests
 import operator
+from nltk.corpus import stopwords
 
 r = requests.get('http://nautil.us/issue/49/the-absurd/why-your-brain-hates-other-people')
 soup = BeautifulSoup(r.text, "html.parser")
@@ -16,6 +17,7 @@ unigram_stats = {x:len(re.findall(x, text)) for x in text.split(' ')}
 unique_words = unigram_stats.keys()
 #bigram_stats = {x+' '+y:len(re.findall(x+' '+y, text)) for x in text for y in unique_words}
 text_list = list(text.split())
+filtered_words = [word for word in text_list if word not in stopwords.words('english')]
 bigram_stats = {}
 for i in range(len(text_list)-1):
 	bigram = text_list[i]+' '+text_list[i+1]
