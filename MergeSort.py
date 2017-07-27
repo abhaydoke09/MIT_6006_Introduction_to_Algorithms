@@ -1,7 +1,9 @@
 def mergeSort(a):
-	if len(a):
-		return
+	if len(a)==1:
+		return a
 	else:
+		start = 0
+		end = len(a)
 		middle = (start+end)/2
 		left = mergeSort(a[start:middle])
 		right = mergeSort(a[middle:end])
@@ -32,7 +34,8 @@ def merge(left, right):
 	return c
 
 
-print merge([2],[3])
+s = [3,2,1,4,2,5,7,1,23,4,5,7,8,0]
+print mergeSort(s)
 
 
 
