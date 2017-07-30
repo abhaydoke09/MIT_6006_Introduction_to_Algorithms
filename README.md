@@ -2,7 +2,7 @@
 
  - Lecture 01 
    - Peak finding algorithm for 1-D and 2-D terrain
-   - Complexity comparision between brute force method and the dive & conquer method 
+   - Complexity comparision between brute force method and the divide & conquer method 
     
  - Lecture 02
    - Model of computation
