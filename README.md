@@ -12,5 +12,7 @@
    
    - Random Access Machine
    - Pointer Machine
+   
+ - Lecture 03 
      
    
