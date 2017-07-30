@@ -14,5 +14,9 @@
    - Pointer Machine
    
  - Lecture 03 
+   - Insertion Sort
+     - O(n^2) complexity
+     - Comparision operation can be done using binary search
+     
      
    
